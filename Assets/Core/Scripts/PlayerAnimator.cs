@@ -23,6 +23,10 @@ namespace YJ.Applications.Players
                 IsWalk = true;
             else
                 IsWalk = false;
+
+            if (Input.GetKeyDown(KeyCode.RightShift))
+                _animator.Play("Smash");
+
             //Mathf.Abs 절대값
             float h = Mathf.Abs(Input.GetAxis("Horizontal"));
             float v = Mathf.Abs(Input.GetAxis("Vertical"));
