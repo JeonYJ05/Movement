@@ -24,7 +24,7 @@ namespace YJ.Applications.Players
             else
                 IsWalk = false;
 
-            if (Input.GetKeyDown(KeyCode.RightShift))
+            if (Input.GetKey(KeyCode.Mouse0))
                 _animator.Play("Smash");
 
             //Mathf.Abs 절대값

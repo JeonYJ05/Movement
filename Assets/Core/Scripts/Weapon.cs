@@ -1,15 +1,24 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
-{ 
-    void Start()
+{
+    public Color newColor;
+    private void OnCollisionEnter(Collision collision)
     {
-        transform.parent = transform;
-        transform.position = transform.parent.position;
-        transform.rotation = transform.parent.rotation;
-    }
+        
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("충돌감지");
+            Renderer renderer = collision.gameObject.GetComponent<Renderer>();
+            renderer.material.color = newColor;
+            
+        }
 
-   
+    }
+    
+
+
 }
